@@ -1,12 +1,17 @@
 package guru.springframework.spring5webapp.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "publisher")
 public class Publisher {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private String address;
 
-    public Publisher(Long id, String name, String address) {
-        this.id = id;
+    public Publisher(String name, String address) {
         this.name = name;
         this.address = address;
     }
